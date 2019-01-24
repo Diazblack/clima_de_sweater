@@ -1,0 +1,22 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.title-bar {
+  background-color: #37393A;
+  height: 100px;
+  text-align: center;
+
+}
+
+.title-1 {
+  color: #ECF1F5;
+  font-weight: bolder;
+  font-size: 40px;
+  padding-top: 20px;
+}
+
+.navbar {
+  background-color: #77B6EA;
+  height: 60px;
+}

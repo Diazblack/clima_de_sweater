@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link type="text/css" rel="stylesheet" href="./lib/reset.css">
+  <link type="text/css" rel="stylesheet" href="./lib/styles.css">
   <meta charset="utf-8">
-  <title>Quantified Self - Diary</title>
+  <title>Clima de Sweater</title>
 </head>
 <body>
-      <!--  the a tag below can link you to another HTML page  -->
-      <!--  if you click the button in the browser right now, you'll get an error because that is not a real file path -->
-      <a href="<file path"><button class="default-button">GO TO OTHER PAGE</button></a>
-    <script
+  <div class="title-bar">
+    <h1 class="title-1">Clima De Sweater</h1>
+  </div>
+
+  <div class="navbar">
+
+  </div>
+
+  <div class="input-wrapper">
+    <h2>Type a City and State Abbreviation</h2>
+    <input type="text" id="location" placeholder="Enter Location (Denver, CO)">
+    <button type="button"class="btn" id="weather-btn">Get Weather</button>
+  </div>
+  <div class="section-1">
+    <div class="current-weather">
+      <div id="sumary">
+
+      </div>
+      <div class="city-info">
+
+      </div>
+
+      <div class="hourly-wrapper">
+        <div id="hourly-forecast">
+          <div class="hourly-card">
+
+          </div>
+        </div>
+      </div>
+      <div class="daily-wrapper">
+        <div id="daily-forecast">
+          <div class="daily-card">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script
     src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'>
   </script>
   <script src="main.bundle.js"></script>
