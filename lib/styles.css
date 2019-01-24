@@ -12,11 +12,59 @@ body {
 .title-1 {
   color: #ECF1F5;
   font-weight: bolder;
-  font-size: 40px;
+  font-size: 50px;
   padding-top: 20px;
 }
 
+.title-2 {
+  color: #37393A;
+  font-size: 25px;
+  padding-top: 10px;
+}
 .navbar {
   background-color: #77B6EA;
-  height: 60px;
+  height: 40px;
+  text-align: right;
+}
+
+.navbar > p {
+  color: #37393A;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-right: 30px;
+}
+h2 {
+    color: #37393A;
+    font-size: 30px;
+    font-weight: 600;
+}
+.input-wrapper {
+  height: 120px;
+  padding-top: 40px;
+  background-color: #e8eef2;
+  text-align: center;
+}
+
+.input-wrapper > h2, input, button {
+  margin-bottom: 10px;
+}
+.section-1 {
+  background-color: #e8eef2;
+  height: 1000px;
+}
+
+.weather-wrapper {
+  display: grid;
+  grid-rows: 300px, 300px, 300px;
+  grid-row-gap: 20px;
+  text-align: center;
+
+  height: 800px;
+  margin-left: 120px;
+  margin-right: 120px;
+}
+
+.weather-wrapper > div {
+    background-color: white;
+    border-radius: 20px;
 }
