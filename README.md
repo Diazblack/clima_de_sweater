@@ -66,7 +66,7 @@ In order to see your application running on production:
 
 5. Under the Github Pages section of Options, select 'master' as your source and click `Save`
 
-Be sure to `npm run build` and commit before each push to master. A few seconds after you push up, you should be able to see your application at <https://your-github-username.github.io/project-name>.
+Be sure to `npm run build` and commit before each push to master. A few seconds after you push up, you should be able to see your application at <https://diazblack.github.io/clima_de_sweater/>.
 
 
 ## Built With
@@ -76,4 +76,3 @@ Be sure to `npm run build` and commit before each push to master. A few seconds 
 * [Express](https://expressjs.com/)
 * [Mocha](https://mochajs.org/)
 * [Chai](https://chaijs.com/)
-
