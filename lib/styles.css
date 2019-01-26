@@ -50,7 +50,7 @@ h2 {
 }
 .section-1 {
   background-color: #e8eef2;
-  height: 1000px;
+  height: auto;
 }
 
 .weather-wrapper {
@@ -58,13 +58,25 @@ h2 {
   grid-rows: 300px, 300px, 300px;
   grid-row-gap: 20px;
   text-align: center;
-
-  height: 800px;
+  height: 900px;
+  overflow: auto;
   margin-left: 120px;
   margin-right: 120px;
 }
 
 .weather-wrapper > div {
-    background-color: white;
-    border-radius: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+.current, .hourly-forecast, .daily-forecast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: #77B6EA;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
 }
