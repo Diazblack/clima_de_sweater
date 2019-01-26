@@ -1,59 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <link type="text/css" rel="stylesheet" href="./lib/reset.css">
-  <link type="text/css" rel="stylesheet" href="./lib/styles.css">
-  <meta charset="utf-8">
-  <title>Clima de Sweater</title>
-</head>
-<body>
-  <div class="title-bar">
-    <h1 class="title-1">Clima De Sweater</h1>
-  </div>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="./lib/reset.css">
+    <link type="text/css" rel="stylesheet" href="./lib/styles.css">
+    <meta charset="utf-8">
+    <title>Clima de Sweater</title>
+  </head>
+  <body>
+    <div class="title-bar">
+      <h1 class="title-1">Clima De Sweater</h1>
+    </div>
 
-  <div class="navbar">
-    <p>Favorites</p>
-  </div>
+    <div class="navbar">
+      <p>Favorites</p>
+    </div>
 
-  <div class="input-wrapper">
-    <h2>Type a City and State Abbreviation</h2>
-    <input type="text" id="location" placeholder="Enter Location (Denver, CO)" size=50> <br>
-    <button type="button"class="btn" id="weather-btn" size=30>Get Weather</button>
-  </div>
-  <div class="section-1">
-    <div class="weather-wrapper">
-      <div class="current-weather">
-        <p class="title-2">Current Weather</p>
-        <div id="sumary">
-
+    <div class="input-wrapper">
+      <h2>Type a City and State Abbreviation</h2>
+      <input type="text" id="location" placeholder="Enter Location (Denver, CO)" size=50> <br>
+      <button type="button" class="btn" id="weather-btn" size=30>Get Weather</button>
+    </div>
+    <div class="section-1">
+      <div class="weather-wrapper">
+        <div class="current-weather">
+          <p class="title-2">Current Weather</p>
+          <div class="current">
+            <div class="summary">
+            </div>
+            <div class="city-info">
+            </div>
+          </div>
         </div>
-        <div class="city-info">
-
-        </div>
-      </div>
-      <div class="hourly-wrapper">
-        <p class="title-2">Hourly</p>
-        <div id="hourly-forecast">
-          <div class="hourly-card">
+        <div class="hourly-wrapper">
+          <p class="title-2">Hourly</p>
+          <div class="hourly-forecast">
 
           </div>
         </div>
-      </div>
-      <div class="daily-wrapper">
-        <p class="title-2">Daily </p>
-        <div id="daily-forecast">
-          <div class="daily-card">
+        <div class="daily-wrapper">
+          <p class="title-2">Daily </p>
+          <div class="daily-forecast">
 
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <script
-    src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'>
-  </script>
-  <script src="main.bundle.js"></script>
-</body>
+    <script
+      src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'>
+    </script>
+    <script src="main.bundle.js"></script>
+  </body>
 </html>
