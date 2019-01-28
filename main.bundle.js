@@ -46,6 +46,7 @@
 
 	"use strict";
 
+	var addFav = document.getElementById("favorite");
 	var locationBtn = document.getElementById("weather-btn");
 	var locationInput = document.getElementById("location");
 	var logIn = document.getElementById("login");
@@ -57,6 +58,9 @@
 	  weatherRequest.onload = function () {
 	    var weatherData = JSON.parse(weatherRequest.responseText);
 	    createHtmlElemets(weatherData);
+	    console.log(locationInput.value);
+	    addFav.value = locationInput.value;
+	    addFav.hidden = false;
 	  };
 	  weatherRequest.send();
 	});
@@ -79,7 +83,7 @@
 	    return response.json();
 	  }).then(function (data) {
 	    var response = data.data.attributes;
-	    sessionStorage.setItem("userKey", response.api_key);
+	    var key = sessionStorage.setItem("userKey", response.api_key);
 	    alert(userData.email + ", Has Succesfully Log In ");
 	    logIn.disabled = true;
 	    $('.login-form').addClass("hidden");
@@ -88,7 +92,29 @@
 	  });
 	}, { once: true });
 
+	addFav.addEventListener("click", function () {
+	  event.preventDefault();
+	  var favoritesInfo = { location: addFav.value, api_key: sessionStorage.userKey };
+	  fetch('https://sweater-weather-567.herokuapp.com/api/v1/favorites', {
+	    method: "POST",
+	    mode: "cors",
+	    redirect: 'follow',
+	    headers: {
+	      'Accept': 'application/json', 'Content-Type': 'application/json' },
+	    body: JSON.stringify(favoritesInfo)
+	  }).then(function (response) {
+	    return response.json();
+	  }).then(function (data) {
+	    if (data.data.id !== null) {
+	      alert(data.data.attributes.location + " was added to favorites");
+	    } else {
+	      alert(data.data.attributes.location + " is already a favorite");
+	    }
+	  });
+	});
+
 	// Helper funtions
+
 
 	function loginError() {
 	  alert("Login Failed. Please enter a valid user email and password.");
@@ -104,7 +130,7 @@
 	}
 
 	function currentElement(data) {
-	  var text = "<ul class=\"card\"><li>" + data.city + "</li><li>Country: " + data.country + "</li><li>" + data.currently.time + "</li><li>Precipation: " + data.currently.preciporcentage + " %</li></ul>";
+	  var text = "<ul class=\"card\"><li>" + data.city + " </li><li>Country: " + data.country + "</li><li>" + data.currently.time + "</li><li>Precipation: " + data.currently.preciporcentage + " %</li></ul>";
 	  $('.summary').append("<ul class=\"card\", id=\"current-temp\"><li>" + data.currently.summary + "</li><li>Temperature:" + data.currently.temp + "</li></ul>");
 	  $('.city-info').append(text);
 	}
@@ -118,10 +144,6 @@
 	  var text = "<ul class=\"card\"><li>" + data.time + "</li><li>" + data.summary + "</li><li>Maximum Temp: " + data.maxtemp + "</li><li>MinimumTemp: " + data.mintemp + "</li><li>Precipation: " + data.preciporcentage + " %</li></ul>";
 	  $('.daily-forecast').append(text);
 	}
-
-	// function displayFrom() {
-	//
-	// }
 
 /***/ })
 /******/ ]);
