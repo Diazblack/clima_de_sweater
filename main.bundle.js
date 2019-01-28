@@ -54,13 +54,15 @@
 
 	locationBtn.addEventListener("click", function () {
 	  var weatherRequest = new XMLHttpRequest();
-	  weatherRequest.open('Get', 'https://sweater-weather-567.herokuapp.com/api/v1/forecast?location=' + locationInput.value);
+	  weatherRequest.open('Get', "https://sweater-weather-567.herokuapp.com/api/v1/forecast?location=" + locationInput.value);
 	  weatherRequest.onload = function () {
-	    var weatherData = JSON.parse(weatherRequest.responseText);
-	    createHtmlElemets(weatherData);
-	    console.log(locationInput.value);
-	    addFav.value = locationInput.value;
-	    addFav.hidden = false;
+	    if (this.status == 200) {
+	      var weatherData = JSON.parse(weatherRequest.responseText);
+	      createHtmlElemets(weatherData);
+	      console.log(locationInput.value);
+	      addFav.value = locationInput.value;
+	      addFav.hidden = false;
+	    }
 	  };
 	  weatherRequest.send();
 	});
@@ -87,6 +89,8 @@
 	    alert(userData.email + ", Has Succesfully Log In ");
 	    logIn.disabled = true;
 	    $('.login-form').addClass("hidden");
+	  }).then(function (favorite) {
+	    favoriteCities();
 	  }).catch(function (error) {
 	    return loginError();
 	  });
@@ -113,9 +117,28 @@
 	  });
 	});
 
+	function favoriteCities() {
+	  var favRequest = new XMLHttpRequest();
+	  favRequest.open('Get', "https://sweater-weather-567.herokuapp.com/api/v1/favorites?api_key=" + sessionStorage.getItem('userKey'));
+	  favRequest.setRequestHeader("Content-Type", "application/json");
+	  favRequest.onload = function () {
+	    if (this.status == 200) {
+	      var favData = JSON.parse(favRequest.responseText);
+	      console.log(favData);
+	      citiesNames(favData);
+	    }
+	  };
+	  favRequest.send();
+	}
+	// ?api_key=${sessionStorage.getItem('userKey')}
 	// Helper funtions
 
 
+	function citiesNames(data) {
+	  for (var i = 0; i < data.length; i++) {
+	    $('#list').append("<li>" + data[i].city + "</li>");
+	  }
+	}
 	function loginError() {
 	  alert("Login Failed. Please enter a valid user email and password.");
 	}
