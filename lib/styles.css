@@ -33,12 +33,15 @@ body {
   position: absolute;
   right: 120px;
 }
-.navbar > p {
+.favorites > p {
   color: #37393A;
-  font-size: 16px;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-top: 2px;
   padding-top: 10px;
   padding-right: 30px;
 }
+
 
 h2 {
   color: #37393A;
@@ -88,6 +91,9 @@ h2 {
   border-radius: 10px;
 }
 
+.login-form {
+  margin-bottom: 0px;
+}
 .hidden {
   display: none;
 }
