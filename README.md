@@ -1,6 +1,6 @@
 # Clima De Sweater
 
-![screenshoot]("./asset/screen_shoot.png")
+![screenshoot]("./assets/screen_shoot.png)
 
 Is a front en application build in JavaScript that allow the user to find the weather forecast acording to city of it preference.
 
